@@ -95,6 +95,33 @@ If your program requires a special way to compile or a specific version of a too
 
 **Thank you and good luck!**
 
+-----------------Solution -------------------
+
+# RewardPay Coding Challenge
+
+## Description
+
+This project solves the RewardPay coding challenge by calculating financial metrics from a dataset.
+
+## Features
+
+- Reads and parses `data.json`.
+- Calculates the following metrics:
+  - Revenue
+  - Expenses
+  - Gross Profit Margin
+  - Net Profit Margin
+  - Working Capital Ratio
+- Formats results with proper currency and percentage formatting.
+- Includes unit tests for all calculations.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (>=14.0.0)
+- npm (>=6.0.0)
+
 **Notes on calculation**
 
 **1. Gross Profit Margin:**
