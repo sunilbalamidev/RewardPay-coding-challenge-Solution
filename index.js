@@ -43,6 +43,9 @@ const expenses = calculateExpenses(data);
 // Gross profit Margin calculation
 
 function calculateGrossProfitMargin(data, revenue) {
+  if (revenue === 0) {
+    throw new Error("Revenue can not be zero");
+  }
   // Step 1: Calculate sales total
   const salesTotal = data
     .filter(
@@ -105,6 +108,10 @@ function calculateWorkingCapitalRatio(data) {
       )
       .reduce((sum, item) => sum + item.total_value, 0);
 
+  if (liabilities === 0) {
+    throw new Error("Division by zero in Working Capital Ratio calculation");
+  }
+
   return ((assets / liabilities) * 100).toFixed(1);
 }
 
@@ -116,7 +123,7 @@ function formatCurrency(value) {
 }
 
 function formatPercentage(value) {
-  return `${value}%`;
+  return `${(value * 100).toFixed(1)}%`;
 }
 //print outputs
 console.log("Revenue:", formatCurrency(revenue));
@@ -130,4 +137,8 @@ module.exports = {
   calculateRevenue,
   calculateExpenses,
   calculateGrossProfitMargin,
+  calculateNetProfitMargin,
+  calculateWorkingCapitalRatio,
+  formatCurrency,
+  formatPercentage,
 };
